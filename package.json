@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CHere/quill-table.git"
+    "url": "git+https://github.com/CHere/quill-find-and-replace.git"
   },
   "keywords": [
     "Quill",
     "Table"
   ],
   "author": "@CHere connorccrosby@outlook.com",
-  "license": "ISC",
+  "license": "GNU",
   "bugs": {
     "url": "https://github.com/CHere/quill-find-and-replace/issues"
   },
