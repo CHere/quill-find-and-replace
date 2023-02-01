@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quill Find and Replace</title>
+    <meta name="description" content="Quill Find and Replace Demo" />
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link href="quill.mention.min.css" rel="stylesheet" />
+    <style>
+      body {
+        font-size: 16px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .ql-editor {
+        border: 1px solid #a3a3a3;
+        border-radius: 6px;
+      }
+
+      .ql-editor-disabled {
+        border-radius: 6px;
+        background-color: rgba(124, 0, 0, 0.2);
+        transition-duration: 0.5s;
+      }
+
+      .ql-editor:focus {
+        border: 1px solid #025fae;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Quill Find and Replace</h1>
+    <p>
+      Quill Find and Replace is a module to provide find and replace
+      functionality for the Quill rich text editor.
+    </p>
+
+    <h2>Demo</h2>
+    <!-- Create the editor container -->
+    <div id="editor"></div>
+
+    <br />
+
+    <h2>License</h2>
+    <p>This project is licensed under the GPL License</p>
+    <p>
+      <a href="https://github.com/CHere/quill-find-and-replace"
+        >View on GitHub</a
+      >
+    </p>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="quill.mention.min.js"></script>
+
+    <script>
+        import FindAndReplace from "src/quill-find-and-replace.js"
+
+      Quill.register("modules/FindAndReplace", FindAndReplace);
+
+      var quill = new Quill("#editor", {
+        placeholder: "Start by typing @ for mentions or # for hashtags...",
+        modules: {
+          FindAndReplace: {},
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -2,4 +2,4 @@
 
 [![License: GPL](https://img.shields.io/badge/License-GPL-yellow.svg)](https://opensource.org/licenses/GPL-3.0)
 
-An NPM library that adds find and replace functionality to the quill rich text editor
+An NPM package that adds find and replace functionality to the quill rich text editor
