@@ -1,4 +1,4 @@
-# quill-table
+# quill-find-and-replace
 
 [![License: GNU](https://img.shields.io/badge/License-GNU-yellow.svg)](https://opensource.org/licenses/GNU)
 
