@@ -1,5 +1,5 @@
 {
-  "name": "quill-find-and-replace",
+  "name": "@CHere/quill-find-and-replace",
   "version": "1.0.0",
   "description": "A plugin to allow for find and replace functionality within the quill rich text editor",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "Find-and-replace"
   ],
   "author": "@CHere connorccrosby@outlook.com",
-  "license": "GPL",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/CHere/quill-find-and-replace/issues"
   },

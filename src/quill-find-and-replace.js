@@ -7,7 +7,7 @@ class FindAndReplace{
         this.quill = quill;
         this.toolbar = quill.getModule("toolbar");
         if (typeof this.toolbar !== "undefined")
-          this.toolbar.addHandler("findAndReplace", this.checkPaletteExists);
+          this.toolbar.addHandler("findAndReplace", this.checkToolbarExists);
     
         var farButtons = document.getElementsByClassName("ql-find-and-replace");
         if (farButtons) {
@@ -16,7 +16,7 @@ class FindAndReplace{
           });
         }
       }
-      checkPaletteExists() {
+      checkToolbarExists() {
         let quill = this.quill;
         checkDialogOpen(quill);
         this.quill.on("text-change", function (delta, oldDelta, source) {
@@ -28,7 +28,7 @@ class FindAndReplace{
     }
     FindAndReplaceToolbar.DEFAULTS = {
       buttonIcon:
-        '<svg viewbox="0 0 18 18"><circle class="ql-fill" cx="7" cy="7" r="1"></circle><circle class="ql-fill" cx="11" cy="7" r="1"></circle><path class="ql-stroke" d="M7,10a2,2,0,0,0,4,0H7Z"></path><circle class="ql-stroke" cx="9" cy="9" r="6"></circle></svg>',
+        '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" id="IconChangeColor"> <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" id="mainIconPathAttribute"></path> </svg>',
     };
     
     function close() {
@@ -44,27 +44,27 @@ class FindAndReplace{
         if (elementExists) {
           elementExists.remove();
         } else {
-          showEmojiPalette(quill);
+          showFindAndReplace(quill);
         }
       }
     
-      function showEmojiPalette(quill) {
-        const paletteWidthAndHeight = 250;
+      function showFindAndReplace(quill) {
+        const toolbarWidthAndHeight = 250;
         let ele_toolbar_area = document.createElement('div');
         let selection = quill.getSelection();
         const selectionBounds = quill.getBounds(selection.index);
         const editorBounds = quill.container.getBoundingClientRect();
         const selectionCenter = (selectionBounds.left + selectionBounds.right) / 2;
         const selectionMiddle = (selectionBounds.top + selectionBounds.bottom) / 2;
-        const paletteLeft = editorBounds.left + selectionCenter + paletteWidthAndHeight <= document.documentElement.clientWidth ? selectionCenter : editorBounds.left - paletteWidthAndHeight;
-        const paletteTop = editorBounds.top + selectionMiddle + paletteWidthAndHeight + 10 <= document.documentElement.clientHeight ? selectionMiddle + 10 :
-          editorBounds.top + selectionMiddle - paletteWidthAndHeight - 10 >= 0 ? selectionMiddle - paletteWidthAndHeight - 10 :
-            document.documentElement.clientHeight - paletteWidthAndHeight - editorBounds.top;
+        const toolbarLeft = editorBounds.left + selectionCenter + toolbarWidthAndHeight <= document.documentElement.clientWidth ? selectionCenter : editorBounds.left - toolbarWidthAndHeight;
+        const toolbarTop = editorBounds.top + selectionMiddle + toolbarWidthAndHeight + 10 <= document.documentElement.clientHeight ? selectionMiddle + 10 :
+          editorBounds.top + selectionMiddle - toolbarWidthAndHeight - 10 >= 0 ? selectionMiddle - toolbarWidthAndHeight - 10 :
+            document.documentElement.clientHeight - toolbarWidthAndHeight - editorBounds.top;
       
         quill.container.appendChild(ele_toolbar_area);
         ele_toolbar_area.id = 'far-toolbar';
-        ele_toolbar_area.style.left = `${paletteLeft}px`;
-        ele_toolbar_area.style.top = `${paletteTop}px`;
+        ele_toolbar_area.style.left = `${toolbarLeft}px`;
+        ele_toolbar_area.style.top = `${toolbarTop}px`;
       
         //panel
         let panel = document.createElement('div');
