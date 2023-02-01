@@ -1,7 +1,7 @@
 {
   "name": "quill-find-and-replace",
   "version": "1.0.0",
-  "description": "A plugin to allow for table functionality within the quill rich text editor",
+  "description": "A plugin to allow for find and replace functionality within the quill rich text editor",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
