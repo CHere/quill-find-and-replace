@@ -1,5 +1,5 @@
 {
-  "name": "quill-table",
+  "name": "quill-find-and-replace",
   "version": "1.0.0",
   "description": "A plugin to allow for table functionality within the quill rich text editor",
   "main": "index.js",
@@ -11,12 +11,16 @@
     "url": "git+https://github.com/CHere/quill-table.git"
   },
   "keywords": [
-    "Quill"
+    "Quill",
+    "Table"
   ],
   "author": "@CHere connorccrosby@outlook.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CHere/quill-table/issues"
+    "url": "https://github.com/CHere/quill-find-and-replace/issues"
   },
-  "homepage": "https://github.com/CHere/quill-table#readme"
+  "homepage": "https://github.com/CHere/quill-find-and-replace#readme",
+  "dependencies": {
+    "quill": "^1.3.7"
+  }
 }
